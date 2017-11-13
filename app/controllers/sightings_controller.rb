@@ -1,4 +1,8 @@
 class SightingsController < ApplicationController
+  def index
+    @sightings = Sighting.all
+    render :index
+  end
 
   def new
     @animal = Animal.find(params[:animal_id])

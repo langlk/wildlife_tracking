@@ -1,0 +1,7 @@
+<h2>Sightings</h2>
+
+<ul>
+  <% @sightings.each do |sighting| %>
+    <li> <%= sighting.date_sighted %>: <%= link_to sighting.region.name, region_path(sighting.region) %>- <%= link_to sighting.animal.species, animal_path(sighting.animal) %> </li>
+  <% end %>
+</ul>

@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :regions do
     resources :sightings
   end
+
+  resources :sightings
 end
