@@ -1,4 +1,6 @@
-<h2>Sightings</h2>
+<div class="page-header">
+  <h1>Sightings</h1>
+</div>
 
 <%= form_for :report, :url => report_path do |f| %>
   <div class="form-group">
@@ -13,9 +15,9 @@
 <% end %>
 
 <% if (@start_date != nil) & (@end_date != nil) %>
-  <h4>Sightings Reported from <%= @start_date %> to <%= @end_date %></h4>
+  <h2>Sightings Reported from <%= @start_date %> to <%= @end_date %></h2>
 <% else %>
-  <h4>All Sightings</h4>
+  <h2>All Sightings</h2>
 <% end %>
 
 <ul>

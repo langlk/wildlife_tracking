@@ -8,6 +8,18 @@ body {
   font-size: 16px;
 }
 
+.container-fluid {
+  background-color: #611c1c;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav li a {
+  color: #d8a0a0;
+}
+
+.navbar-default .navbar-brand:hover,  .navbar-default .navbar-nav li a:hover {
+  color: #906a6a;
+}
+
 h1 {
 
 }

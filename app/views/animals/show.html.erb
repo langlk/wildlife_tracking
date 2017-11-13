@@ -26,9 +26,8 @@
   <p>There are no sightings for this animal!</p>
 <% end %>
 
-<%= link_to "Report a Sighting", new_animal_sighting_path(@animal) %>
-
-<%= link_to "Edit", edit_animal_path(@animal) %>
+<p><%= link_to "Report a Sighting", new_animal_sighting_path(@animal) %></p>
+<p><%= link_to "Edit", edit_animal_path(@animal) %></p>
 <p><%= link_to "Delete", animal_path(@animal),
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
