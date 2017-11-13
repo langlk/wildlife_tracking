@@ -31,6 +31,9 @@ class RegionsController < ApplicationController
 
   def destroy
     @region = Region.find(params[:id])
+    @region.sightings.each do |sighting|
+      sighting.destroy
+    end
     @region.destroy
     redirect_to regions_path
   end

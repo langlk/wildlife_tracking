@@ -36,6 +36,9 @@ class AnimalsController < ApplicationController
 
   def destroy
     @animal = Animal.find(params[:id])
+    @animal.sightings.each do |sighting|
+      sighting.destroy
+    end
     @animal.destroy
     redirect_to animals_path
   end
