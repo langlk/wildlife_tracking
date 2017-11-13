@@ -1,5 +1,23 @@
 <h2>Sightings</h2>
 
+<%= form_for :report, :url => report_path do |f| %>
+  <div class="form-group">
+    <%= f.label :start_date, class: "control-label" %>
+    <%= f.date_field :start_date, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :end_date, class: "control-label" %>
+    <%= f.date_field :end_date, class: "form-control" %>
+  </div>
+  <%= f.submit class: "btn" %>
+<% end %>
+
+<% if (@start_date != nil) & (@end_date != nil) %>
+  <h4>Sightings Reported from <%= @start_date %> to <%= @end_date %></h4>
+<% else %>
+  <h4>All Sightings</h4>
+<% end %>
+
 <ul>
   <% @sightings.each do |sighting| %>
     <li> <%= sighting.date_sighted %>: <%= link_to sighting.region.name, region_path(sighting.region) %>- <%= link_to sighting.animal.species, animal_path(sighting.animal) %> </li>

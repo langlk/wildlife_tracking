@@ -1,4 +1,12 @@
 class SightingsController < ApplicationController
+
+  def report
+    @start_date = Date.parse( params["report"]["start_date"])
+    @end_date = Date.parse( params["report"]["end_date"])
+    @sightings = Sighting.report(@start_date, @end_date)
+    render :index
+  end
+
   def index
     @sightings = Sighting.all
   end

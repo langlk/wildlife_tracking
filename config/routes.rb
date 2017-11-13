@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :sightings
+
+  post 'report', to: "sightings#report"
+  get 'report', to: "sightings#index"
 end
