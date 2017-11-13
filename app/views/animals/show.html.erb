@@ -15,6 +15,9 @@
       <li>
         <%= sighting.date_sighted %>: <%= sighting.location %>
         <%= link_to "Edit", edit_animal_sighting_path(@animal, sighting) %>
+        <%= link_to "Delete", animal_sighting_path(@animal, sighting),
+                                 :data => {:confirm => "You sure?",
+                                           :method => "delete"} %>
       </li>
     <% end %>
   </ul>

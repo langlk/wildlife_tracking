@@ -32,6 +32,13 @@ class SightingsController < ApplicationController
     end
   end
 
+  def destroy
+    @animal = Animal.find(params[:animal_id])
+    @sighting = @animal.sightings.find(params[:id])
+    @sighting.destroy
+    redirect_to animal_path(@animal)
+  end
+
 private
   def sighting_params
     params.require(:sighting).permit(:location, :date_sighted)
