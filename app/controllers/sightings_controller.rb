@@ -2,7 +2,7 @@ class SightingsController < ApplicationController
 
   def new
     @animal = Animal.find(params[:animal_id])
-    @sighting = Sighting.new
+    @sighting = @animal.sightings.new
     render :new
   end
 
@@ -13,6 +13,22 @@ class SightingsController < ApplicationController
       redirect_to animal_path(@animal)
     else
       render :new
+    end
+  end
+
+  def edit
+    @animal = Animal.find(params[:animal_id])
+    @sighting = @animal.sightings.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @animal = Animal.find(params[:animal_id])
+    @sighting = @animal.sightings.find(params[:id])
+    if @sighting.update(sighting_params)
+      redirect_to animal_path(@animal)
+    else
+      render :edit
     end
   end
 

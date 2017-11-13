@@ -12,7 +12,10 @@
 <% if @animal.sightings.any? %>
   <ul>
     <% @animal.sightings.each do |sighting| %>
-      <li> <%= sighting.date_sighted %>: <%= sighting.location %> </li>
+      <li>
+        <%= sighting.date_sighted %>: <%= sighting.location %>
+        <%= link_to "Edit", edit_animal_sighting_path(@animal, sighting) %>
+      </li>
     <% end %>
   </ul>
 <% else %>
