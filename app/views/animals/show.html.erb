@@ -7,3 +7,5 @@
 <% if @animal.gender %>
   <h4> <%= @animal.gender %> </h4>
 <% end %>
+
+<%= link_to "Edit", edit_animal_path(@animal) %>
