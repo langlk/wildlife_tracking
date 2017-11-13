@@ -1,0 +1,7 @@
+<h2>Sightings in <%= @region.name %> </h2>
+
+<ul>
+  <% @region.sightings.each do |sighting| %>
+    <li> <%= sighting.animal.species %>: <%= sighting.date_sighted %>, <%= sighting.location %> </li>
+  <% end %>
+</ul>
