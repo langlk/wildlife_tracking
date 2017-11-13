@@ -10,6 +10,7 @@ class RegionsController < ApplicationController
   def create
     @region = Region.new(region_params)
     if @region.save
+      flash[:notice] = "Region successfully added!"
       redirect_to regions_path
     else
       render :new
