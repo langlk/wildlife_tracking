@@ -1,12 +1,10 @@
 class RegionsController < ApplicationController
   def index
     @regions = Region.all
-    render :index
   end
 
   def new
     @region = Region.new
-    render :new
   end
 
   def create
@@ -20,7 +18,6 @@ class RegionsController < ApplicationController
 
   def edit
     @region = Region.find(params[:id])
-    render :edit
   end
 
   def update
@@ -40,7 +37,6 @@ class RegionsController < ApplicationController
 
   def show
     @region = Region.find(params[:id])
-    render :show
   end
 
 private

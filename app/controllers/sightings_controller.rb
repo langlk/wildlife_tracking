@@ -1,7 +1,6 @@
 class SightingsController < ApplicationController
   def index
     @sightings = Sighting.all
-    render :index
   end
 
   def new
@@ -23,7 +22,6 @@ class SightingsController < ApplicationController
   def edit
     @animal = Animal.find(params[:animal_id])
     @sighting = @animal.sightings.find(params[:id])
-    render :edit
   end
 
   def update
