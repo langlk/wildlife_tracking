@@ -18,6 +18,11 @@ class AnimalsController < ApplicationController
     end
   end
 
+  def show
+    @animal = Animal.find(params[:id])
+    render :show
+  end
+
   private
   def animal_params
     params.require(:animal).permit(:species, :name, :gender)
