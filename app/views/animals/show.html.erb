@@ -1,5 +1,9 @@
 <h2> <%= @animal.species %> </h2>
 
+<% if @animal.image.thumb.url != nil %>
+  <p><%= image_tag @animal.image.thumb.url %></p>
+<% end %>
+
 <% if @animal.name %>
   <h4> <%= @animal.name %> </h4>
 <% end %>
