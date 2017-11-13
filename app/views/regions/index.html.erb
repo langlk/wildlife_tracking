@@ -5,6 +5,9 @@
     <li>
       <%= region.name %>
       <%= link_to "Edit", edit_region_path(region) %>
+      <%= link_to "Delete", region_path(region),
+                               :data => {:confirm => "You sure?",
+                                         :method => "delete"} %>
     </li>
   <% end %>
 </ul>

@@ -31,7 +31,13 @@ class RegionsController < ApplicationController
       render :edit
     end
   end
-  
+
+  def destroy
+    @region = Region.find(params[:id])
+    @region.destroy
+    redirect_to regions_path
+  end
+
 private
   def region_params
     params.require(:region).permit(:name)
