@@ -13,6 +13,7 @@
   <ul>
     <% @animal.sightings.each do |sighting| %>
       <li>
+        <%= sighting.region.name %> -
         <%= sighting.date_sighted %>: <%= sighting.location %>
         <%= link_to "Edit", edit_animal_sighting_path(@animal, sighting) %>
         <%= link_to "Delete", animal_sighting_path(@animal, sighting),

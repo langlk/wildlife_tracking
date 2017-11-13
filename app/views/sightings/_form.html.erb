@@ -1,6 +1,9 @@
 <%= render "layouts/errors", :object => @sighting %>
 
 <%= form_for [@animal, @sighting] do |f| %>
+  <%= f.select(:region_id) do %>
+    <%= options_from_collection_for_select(Region.all, :id, :name) %>
+  <% end %>
   <%= f.label :location %>
   <%= f.text_field :location %>
   <%= f.label :date_sighted %>
