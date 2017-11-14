@@ -10,9 +10,11 @@
       <h4> <%= @animal.gender %> </h4>
     <% end %>
   </div>
-  <div class="animal-pic flex-item">
+  <div class="flex-item">
     <% if @animal.image.thumb.url != nil %>
-      <p><%= image_tag @animal.image.thumb.url %></p>
+      <div class="animal-pic">
+        <p><%= image_tag @animal.image.thumb.url %></p>
+      </div>
     <% end %>
   </div>
 </div>
