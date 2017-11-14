@@ -1,16 +1,21 @@
-<h2> <%= @animal.species %> </h2>
+<div class="animal-container">
+  <div class="animal-info flex-item">
+    <h2> <%= @animal.species %> </h2>
 
-<% if @animal.image.thumb.url != nil %>
-  <p><%= image_tag @animal.image.thumb.url %></p>
-<% end %>
+    <% if @animal.name %>
+      <h4> <%= @animal.name %> </h4>
+    <% end %>
 
-<% if @animal.name %>
-  <h4> <%= @animal.name %> </h4>
-<% end %>
-
-<% if @animal.gender %>
-  <h4> <%= @animal.gender %> </h4>
-<% end %>
+    <% if @animal.gender %>
+      <h4> <%= @animal.gender %> </h4>
+    <% end %>
+  </div>
+  <div class="animal-pic flex-item">
+    <% if @animal.image.thumb.url != nil %>
+      <p><%= image_tag @animal.image.thumb.url %></p>
+    <% end %>
+  </div>
+</div>
 
 <h3>Sightings</h3>
 <% if @animal.sightings.any? %>

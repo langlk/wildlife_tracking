@@ -41,3 +41,27 @@ a:hover {
 .alert h3 {
   margin-top: .1em;
 }
+
+.animal-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+}
+
+.animal-info h2 {
+  margin-top: .1em;
+  font-size: 36px;
+  border-bottom: 1px solid #ddd;
+}
+
+.animal-pic {
+  padding: .5em;
+  border: 1px solid grey;
+}
+
+.animal-pic p {
+  margin: 0px;
+}
